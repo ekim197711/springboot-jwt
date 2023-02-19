@@ -1,0 +1,20 @@
+{
+  "name": "springboot-jwt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "client_id": "-d client_id=spaceship_application",
+    "credentials": "-d username=mike -d password=test -d grant_type=password",
+    "url": "http://localhost:9080/realms/master/protocol/openid-connect/token"
+  },
+  "scripts": {
+    "enabler_git_bash_for_npm": "npm config set script-shell \"C:\\Program Files\\Git\\bin\\bash.exe\"",
+    "public_key": "curl https://www.googleapis.com/service_accounts/v1/metadata/raw/weather-client-application@mikes-demo.iam.gserviceaccount.com",
+    "public_key_cert": "curl https://www.googleapis.com/service_accounts/v1/metadata/x509/weather-client-application@mikes-demo.iam.gserviceaccount.com",
+    "pkey": "curl https://www.googleapis.com/service_accounts/v1/jwk/weather-client-application@mikes-demo.iam.gserviceaccount.com",
+    "get_token": "curl $npm_package_config_client_id $npm_package_config_credentials $npm_package_config_url"
+  },
+  "author": "",
+  "license": "ISC"
+}

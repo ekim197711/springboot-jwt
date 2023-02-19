@@ -1,0 +1,18 @@
+  "attributes": {
+    "destination": "mars"
+  }
+  "protocolMappers": [{
+  "id": "06e5fc8f-3553-4c75-aef4-5a4d7bb6c0d1",
+  "name": "organization",
+  "protocol": "openid-connect",
+  "protocolMapper": "oidc-usermodel-attribute-mapper",
+  "consentRequired": false,
+  "config": {
+  "userinfo.token.claim": "true",
+  "user.attribute": "destination",
+  "id.token.claim": "true",
+  "access.token.claim": "true",
+  "claim.name": "organization",
+  "jsonType.label": "String"
+  }
+  }],

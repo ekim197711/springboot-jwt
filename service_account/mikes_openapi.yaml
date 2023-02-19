@@ -1,0 +1,58 @@
+swagger: "2.0"
+info:
+  title: mikes-demo
+  description: demo
+  version: 0.0.1
+x-google-backend:
+  address:
+schemes:
+  - https
+paths:
+  /mike:
+    post:
+      tags:
+        - SpaceShip
+      description: get a ship
+      operationId: SpaceShip
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: "#/definitions/SpaceShipType"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: Success response
+          schema:
+            type: string
+
+definitions:
+  SpaceShipType:
+    type: object
+    properties:
+      captain:
+        type: string
+      fuelleft:
+        type: integer
+      type:
+        type: string
+security:
+  - api_key: [ ]
+    google_jwt: [ ]
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: key
+    in: query
+  google_jwt:
+    authorizationUrl: ''
+    flow: implicit
+    type: oauth2
+    x-google-issuer: spaceship-client@mikes-demo.iam.gserviceaccount.com
+    x-google-audiences: mikes-demo
+    x-google-jwks_uri: >-
+      https://www.googleapis.com/service_accounts/v1/jwk/spaceship-client@mikes-demo.iam.gserviceaccount.com
